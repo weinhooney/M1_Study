@@ -66,6 +66,7 @@ public static class Define
         CollectEnv,
         ReturnToCamp,
         ForceMove,
+        ForcePath,
     }
 
     public enum EEnvState

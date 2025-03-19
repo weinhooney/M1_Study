@@ -42,6 +42,21 @@ public class BaseObject : InitBase
         return true;
     }
 
+    protected virtual void OnDisable()
+    {
+        if (SkeletonAnim == null)
+        {
+            return;
+        }
+
+        if (SkeletonAnim.AnimationState == null)
+        {
+            return;
+        }
+
+        SkeletonAnim.AnimationState.Event -= OnAnimEventHandler;
+    }
+    
     public void LookAtTarget(BaseObject target)
     {
         Vector2 dir = target.transform.position - transform.position;
@@ -53,6 +68,15 @@ public class BaseObject : InitBase
         {
             LookLeft = false;
         }
+    }
+
+    public static Vector3 GetLookAtRotation(Vector3 dir)
+    {
+        // Mathf.Atan2를 사용해 각도를 계산하고, 라디안에서 도로 변환
+        float angle = Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg;
+        
+        // Z축을 기준으로 회전하는 Vector3 값을 리턴
+        return new Vector3(0, 0, angle);
     }
     
     #region Battle
@@ -89,14 +113,25 @@ public class BaseObject : InitBase
     
     protected virtual void UpdateAnimation() { }
     
-    public void PlayAnimation(int trackIndex, string animName, bool loop)
+    public TrackEntry PlayAnimation(int trackIndex, string animName, bool loop)
     {
         if (SkeletonAnim == null)
         {
-            return;
+            return null;
         }
 
-        SkeletonAnim.AnimationState.SetAnimation(trackIndex, animName, loop);
+        TrackEntry entry = SkeletonAnim.AnimationState.SetAnimation(trackIndex, animName, loop);
+
+        if (animName == AnimName.DEAD)
+        {
+            entry.MixDuration = 0;
+        }
+        else
+        {
+            entry.MixDuration = 0.2f;
+        }
+        
+        return entry;
     }
 
     public void AddAnimation(int trackIndex, string animName, bool loop, float delay)

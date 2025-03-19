@@ -7,7 +7,7 @@
       "MaxHp": 10.0,
       "ResourceAmount": 1,
       "RegenTime": 60.0,
-      "SpineNames": [
+      "SkeletonDataIDs": [
         "wood_1_SkeletonData",
         "wood_2_SkeletonData"
       ],
@@ -20,7 +20,7 @@
       "MaxHp": 10.0,
       "ResourceAmount": 1,
       "RegenTime": 60.0,
-      "SpineNames": [
+      "SkeletonDataIDs": [
         "wood_1_SkeletonData",
         "wood_2_SkeletonData"
       ],

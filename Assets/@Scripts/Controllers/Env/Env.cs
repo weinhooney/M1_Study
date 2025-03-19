@@ -46,8 +46,8 @@ public class Env : BaseObject
         MaxHp = _data.MaxHp;
         
         // Spine
-        string ranSpine = _data.SpineNames[Random.Range(0, _data.SpineNames.Count)];
-        SetSpineAnimation(ranSpine, SortingLayers.ENV);
+        // string ranSpine = _data.SpineNames[Random.Range(0, _data.SpineNames.Count)];
+        // SetSpineAnimation(ranSpine, SortingLayers.ENV);
     }
 
     protected override void UpdateAnimation()

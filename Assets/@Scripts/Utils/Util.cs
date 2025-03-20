@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using static Define;
+using ColorUtility = UnityEngine.ColorUtility;
 
 public static class Util
 {
@@ -68,6 +69,18 @@ public static class Util
     public static T ParseEnum<T>(string value)
     {
         return (T)Enum.Parse(typeof(T), value, true);
+    }
+
+    public static Color HexToColor(string color)
+    {
+        if (color.Contains("#") == false)
+        {
+            color = $"#{color}";
+        }
+
+        ColorUtility.TryParseHtmlString(color, out Color parsedColor);
+
+        return parsedColor;
     }
 
     public static ECreatureType DetermineTargetType(ECreatureType ownerType, bool findAllies)

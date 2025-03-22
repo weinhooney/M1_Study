@@ -40,6 +40,7 @@ public static class Define
         Creature,
         Projectile,
         Env,
+        Effect,
     }
 
     public enum ECreatureType
@@ -56,6 +57,7 @@ public static class Define
         Idle,
         Move,
         Skill,
+        OnDamaged,
         Dead,
     }
 
@@ -151,7 +153,39 @@ public static class Define
         Debuff,
         CrowdControl,
     }
+    
+    public enum EEffectSpawnType
+    {
+        Skill, // 지속시간이 있는 기본적인 이펙트
+        External, // 외부(장판스킬)에서 이펙트를 관리(지속시간에 영향을 받지 않음)
+    }
 
+    public enum EEffectClearType
+    {
+        TimeOut, // 시간초과로 인한 Effect 종료
+        ClearSkill, // 정화 스킬로 인한 Effect 종료
+        TriggeroutAoE, // AoE스킬을 벗어난 종료
+        EndOfAirborne, // 에어본이 끝난 경우 호출되는 종료
+    }
+
+    public enum EEffectClassName
+    {
+        Bleeding,
+        Poison,
+        Ignite,
+        Heal,
+        AttackBuff,
+        MoveSpeedBuff,
+        AttackSpeedBuff,
+        LifeStealBuff,
+        ReduceDmgBuff,
+        ThornsBuff,
+        Knockback,
+        Airborne,
+        PullEffect,
+        Stun,
+    }
+    
     public const float EFFECT_SMALL_RADIUS = 2.5f;
     public const float EFFECT_NORMAL_RADIUS = 4.5f;
     public const float EFFECT_BIG_RADIUS = 5.5f;
@@ -170,6 +204,7 @@ public static class Define
     
     public const int HERO_WIZARD_ID = 201000;
     public const int HERO_KNIGHT_ID = 201001;
+    public const int HERO_LION_ID = 201003;
 
     public const int MONSTER_SLIME_ID = 202001;
     public const int MONSTER_SPIDER_COMMON_ID = 202002;

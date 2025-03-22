@@ -13,6 +13,8 @@ public class Creature : BaseObject
     public SkillComponent Skills { get; protected set; }
     public Data.CreatureData CreatureData { get; private set; }
     public ECreatureType CreatureType { get; protected set; } = ECreatureType.None;
+    
+    public EffectComponent Effects { get; set; }
 
     #region Stats
     public float Hp { get; set; }
@@ -91,20 +93,7 @@ public class Creature : BaseObject
         RigidBody.mass = 0;
         
         // Spine
-        SkeletonAnim.skeletonDataAsset = Managers.Resource.Load<SkeletonDataAsset>(CreatureData.SkeletonDataID);
-        SkeletonAnim.Initialize(true);
-        
-        // Register AnimEvent
-        if (SkeletonAnim.AnimationState != null)
-        {
-            SkeletonAnim.AnimationState.Event -= OnAnimEventHandler;
-            SkeletonAnim.AnimationState.Event += OnAnimEventHandler;
-        }
-        
-        // Spine SkeletonAnimation은 SpriteRenderer를 사용하지 않고 MeshRenderer를 사용함
-        // 그렇기 때문에 2D Sort Axis가 안 먹히게 되는데, SortingGroup을 SpriteRenderer, MeshRenderer를 같이 계산함
-        SortingGroup sg = Util.GetOrAddComponent<SortingGroup>(gameObject);
-        sg.sortingOrder = SortingLayers.CREATURE;
+        SetSpineAnimation(CreatureData.SkeletonDataID, SortingLayers.CREATURE);
         
         // Skills
         Skills = gameObject.GetOrAddComponent<SkillComponent>();
@@ -125,6 +114,10 @@ public class Creature : BaseObject
         // State
         CreatureState = ECreatureState.Idle;
         
+        // Effect
+        Effects = gameObject.AddComponent<EffectComponent>();
+        Effects.SetInfo(this);
+        
         // Map
         StartCoroutine(CoLerpToCellPos());
     }
@@ -143,6 +136,11 @@ public class Creature : BaseObject
             
             case ECreatureState.Move:
                 PlayAnimation(0, AnimName.MOVE, true);
+                break;
+            
+            case ECreatureState.OnDamaged:
+                PlayAnimation(0, AnimName.IDLE, true);
+                Skills.CurrentSkill.CancelSkill();
                 break;
             
             case ECreatureState.Dead:
@@ -175,6 +173,10 @@ public class Creature : BaseObject
                     UpdateSkill();
                     break;
             
+                case ECreatureState.OnDamaged:
+                    UpdateOnDamaged();
+                    break;
+                
                 case ECreatureState.Dead:
                     UpdateDead();
                     break;
@@ -225,6 +227,7 @@ public class Creature : BaseObject
         float delay = trackEntry.Animation.Duration;
         StartWait(delay);
     }
+    protected virtual void UpdateOnDamaged() {}
     protected virtual void UpdateDead() { }
     #endregion
 
@@ -281,6 +284,13 @@ public class Creature : BaseObject
         {
             OnDead(attacker, skill);
             CreatureState = ECreatureState.Dead;
+            return;
+        }
+        
+        // 스킬에 따른 Effect 적용
+        if (skill.SkillData.EffectIds != null)
+        {
+            Effects.GenerateEffects(skill.SkillData.EffectIds.ToArray(), EEffectSpawnType.Skill);
         }
     }
 

@@ -43,7 +43,7 @@ public class HeroCamp : BaseObject
             return;
         }
 
-        if (Managers.Map.CanGo(newPos, ignoreObjects: true, ignoreSemiWall: true) == false)
+        if (Managers.Map.CanGo(null, newPos, ignoreObjects: true, ignoreSemiWall: true) == false)
         {
             return;
         }

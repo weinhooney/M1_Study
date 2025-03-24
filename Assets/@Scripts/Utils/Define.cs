@@ -37,20 +37,14 @@ public static class Define
     {
         None,
         HeroCamp,
-        Creature,
+        Hero,
+        Monster,
+        Npc,
         Projectile,
         Env,
         Effect,
     }
-
-    public enum ECreatureType
-    {
-        None,
-        Hero,
-        Monster,
-        Npc,
-    }
-
+    
     public enum ECreatureState
     {
         None,

@@ -58,7 +58,8 @@ public class Airborne : CCBase
         // 에어본 상태가 끝난 후 상태 복귀
         if(Owner.CreatureState == ECreatureState.OnDamaged)
         {
-            Owner.CreatureState = _lastState;
+            // Owner.CreatureState = _lastState;
+            Owner.CreatureState = ECreatureState.Idle;
         }
 
         ClearEffect(EEffectClearType.EndOfAirborne);

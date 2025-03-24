@@ -23,6 +23,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 76d3eb1c77a7e3c4180773fd08350fc0
+    m_Address: 003_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bf9ec093fe189a04d92278eaa0f28574
     m_Address: goblin_SkeletonData
     m_ReadOnly: 0
@@ -47,6 +53,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 82120fbb903c40d4f88f7b70503c90e2
+    m_Address: 001_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df80bf8d422a13445870a721c43099d8
     m_Address: spider_common_SkeletonData
     m_ReadOnly: 0
@@ -61,6 +73,24 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: e42fb9220d96d7e4c86a9de95818b96b
     m_Address: wood_2_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b3216f9a8939d554ca2ebadaa61f6b22
+    m_Address: 005_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9b77f658e56e14e48a2f5aeda6bead62
+    m_Address: 002_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 287bf67f9794be145b580ccc6a4d3a65
+    m_Address: 004_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -109,6 +139,54 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 26f2244b990f5ae459290af6d2a7aa2b
     m_Address: stun_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e08eef4aa88f9d54892b3030c980a1c4
+    m_Address: 006_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b473b514912b8804aa13a19894b6d4eb
+    m_Address: 020_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7c834880c8d8774da453c252b4185a6
+    m_Address: 022_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 417beed044cd3a04184c7c6caba85ecb
+    m_Address: loren_skill_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b512cac7257e3c04898ae7be6e0db84b
+    m_Address: veti_skill_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 16ded4fc60393844ab24e93e03be843d
+    m_Address: loren_skill_2_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9af7977422e9aec43b8a9a1140ccf692
+    m_Address: owen_skill_1_SkeletonData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dd225f6bb768c5444800dfbd27118acd
+    m_Address: owen_skill_2_SkeletonData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad

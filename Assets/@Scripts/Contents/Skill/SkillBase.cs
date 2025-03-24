@@ -109,13 +109,13 @@ public abstract class SkillBase : InitBase
         excludeMask.AddLayer(Define.ELayer.Env);
         excludeMask.AddLayer(Define.ELayer.Obstacle);
 
-        switch (owner.CreatureType)
+        switch (owner.ObjectType)
         {
-            case Define.ECreatureType.Hero:
+            case Define.EObjectType.Hero:
                 excludeMask.AddLayer(Define.ELayer.Hero);
                 break;
             
-            case Define.ECreatureType.Monster:
+            case Define.EObjectType.Monster:
                 excludeMask.AddLayer(Define.ELayer.Monster);
                 break;
         }
@@ -133,4 +133,24 @@ public abstract class SkillBase : InitBase
     }
 
     protected abstract void OnAttackEvent();
+
+    public virtual void GenerateAoE(Vector3 spawnPos)
+    {
+        AoEBase aoe = null;
+        int id = SkillData.AoEId;
+        string className = Managers.Data.AoEDict[id].ClassName;
+
+        Type componentType = Type.GetType(className);
+
+        if (componentType == null)
+        {
+            Debug.LogError("AoE Type not found: " + className);
+            return;
+        }
+
+        GameObject go = Managers.Object.SpawnGameObject(spawnPos, "AoE");
+        go.name = Managers.Data.AoEDict[id].ClassName;
+        aoe = go.AddComponent(componentType) as AoEBase;
+        aoe.SetInfo(SkillData.AoEId, Owner, this);
+    }
 }

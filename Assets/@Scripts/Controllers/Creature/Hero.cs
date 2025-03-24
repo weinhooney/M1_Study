@@ -53,7 +53,7 @@ public class Hero : Creature
             return false;
         }
 
-        CreatureType = Define.ECreatureType.Hero;
+        ObjectType = EObjectType.Hero;
         
         Managers.Game.OnJoystickStateChanged -= HandleOnJoystickStateChanged;
         Managers.Game.OnJoystickStateChanged += HandleOnJoystickStateChanged;
@@ -239,12 +239,12 @@ public class Hero : Creature
             return false;
         }
 
-        if (Managers.Map.CanGo(destCellPos, ignoreObjects: true) == false)
+        if (Managers.Map.CanGo(this, destCellPos, ignoreObjects: true) == false)
         {
             return false;
         }
 
-        List<Vector3Int> path = Managers.Map.FindPath(CellPos, destCellPos, 100);
+        List<Vector3Int> path = Managers.Map.FindPath(this, CellPos, destCellPos, 100);
         if (path.Count < 2)
         {
             return false;

@@ -9,6 +9,7 @@ using static Define;
 public class EffectBase : BaseObject
 {
     public Creature Owner;
+    public SkillBase Skill;
     public EffectData EffectData;
     public EEffectType EffectType;
 
@@ -26,11 +27,13 @@ public class EffectBase : BaseObject
         return true;
     }
 
-    public virtual void SetInfo(int templateID, Creature owner, EEffectSpawnType spawnType)
+    public virtual void SetInfo(int templateID, Creature owner, EEffectSpawnType spawnType, SkillBase skill)
     {
         DataTemplateID = templateID;
         EffectData = Managers.Data.EffectDict[templateID];
 
+        Skill = skill;
+        
         Owner = owner;
         _spawnType = spawnType;
 

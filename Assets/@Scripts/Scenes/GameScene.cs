@@ -16,6 +16,7 @@ public class GameScene : BaseScene
         SceneType = Define.EScene.GameScene;
 
         Managers.Map.LoadMap("BaseMap");
+        Managers.Map.StageTransition.SetInfo();
 
         HeroCamp camp = Managers.Object.Spawn<HeroCamp>(Vector3.zero, 0);
         camp.SetCellPos(new Vector3Int(0, 0, 0), true);
@@ -42,9 +43,9 @@ public class GameScene : BaseScene
         Managers.UI.ShowBaseUI<UI_Joystick>();
 
         {
-            Monster monster = Managers.Object.Spawn<Monster>(new Vector3(1, 1, 0), Define.MONSTER_BEAR_ID);
-            monster.ExtraCells = 1;
-            Managers.Map.MoveTo(monster, new Vector3Int(0, 4, 0), true);
+            // Monster monster = Managers.Object.Spawn<Monster>(new Vector3(1, 1, 0), Define.MONSTER_BEAR_ID);
+            // monster.ExtraCells = 1;
+            // Managers.Map.MoveTo(monster, new Vector3Int(0, 4, 0), true);
         }
 
         {

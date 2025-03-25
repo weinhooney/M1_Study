@@ -17,44 +17,8 @@ MonoBehaviour:
     m_SerializedData: []
   m_GUID: 5a7cd0b1c901a424ea8e6c561b5e7b6c
   m_SerializeEntries:
-  - m_GUID: 843fcb5b0a70c854f8b4c9f5416e8689
-    m_Address: ProjectileData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: eb54e0b78d8b95d4291d0f9973b8668e
-    m_Address: SkillData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 8787af1e03992314bbc3c2ecc45e25b8
-    m_Address: CreatureData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 3a5adb55a15c39642bfec4606ca19735
-    m_Address: MonsterData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: db7c0b011b606ab47ae392ae588559f4
-    m_Address: EnvData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 611fe450941efec419a36130a28acc4a
-    m_Address: HeroData
-    m_ReadOnly: 0
-    m_SerializedLabels:
-    - PreLoad
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 6d9f12ff868eada43a533fda2489453c
-    m_Address: BaseMapCollision
+  - m_GUID: bab46094c3b32fc4684f17ada75dd6e1
+    m_Address: AoEData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad
@@ -65,8 +29,44 @@ MonoBehaviour:
     m_SerializedLabels:
     - PreLoad
     FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: bab46094c3b32fc4684f17ada75dd6e1
-    m_Address: AoEData
+  - m_GUID: 611fe450941efec419a36130a28acc4a
+    m_Address: HeroData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: db7c0b011b606ab47ae392ae588559f4
+    m_Address: EnvData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3a5adb55a15c39642bfec4606ca19735
+    m_Address: MonsterData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8787af1e03992314bbc3c2ecc45e25b8
+    m_Address: CreatureData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6d9f12ff868eada43a533fda2489453c
+    m_Address: BaseMapCollision
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: eb54e0b78d8b95d4291d0f9973b8668e
+    m_Address: SkillData
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - PreLoad
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 843fcb5b0a70c854f8b4c9f5416e8689
+    m_Address: ProjectileData
     m_ReadOnly: 0
     m_SerializedLabels:
     - PreLoad

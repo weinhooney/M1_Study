@@ -45,6 +45,17 @@ public static class Define
         Effect,
     }
     
+    public enum ENpcType
+    {
+        Camp,
+        Portal,
+        Waypoint,
+        BlackSmith,
+        Guild,
+        TreasureBox,
+        Dungeon
+    }
+    
     public enum ECreatureState
     {
         None,

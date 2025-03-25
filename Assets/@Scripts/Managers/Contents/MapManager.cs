@@ -15,6 +15,7 @@ public class MapManager
 
     // (CellPos, BaseObject)
     private Dictionary<Vector3Int, BaseObject> _cells = new Dictionary<Vector3Int, BaseObject>();
+    public StageTransition StageTransition;
 
     private int MinX;
     private int MaxX;
@@ -34,6 +35,8 @@ public class MapManager
         map.transform.position = Vector3.zero;
         map.name = $"&Map_{mapName}";
 
+        StageTransition = map.GetComponent<StageTransition>();
+        
         Map = map;
         MapName = mapName;
         CellGrid = map.GetComponent<Grid>();

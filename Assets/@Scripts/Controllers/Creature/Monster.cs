@@ -71,7 +71,7 @@ public class Monster : Creature
     
     protected override void UpdateIdle()
     {
-        Debug.Log("Idle");
+        // Debug.Log("Idle");
 
         // Patrol
         {
@@ -97,7 +97,7 @@ public class Monster : Creature
 
     protected override void UpdateMove()
     {
-        Debug.Log("Move");
+        // Debug.Log("Move");
 
         if (Target.IsValid() == false)
         {

@@ -1,6 +1,7 @@
-using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class StageTransition : InitBase
 {
@@ -13,10 +14,10 @@ public class StageTransition : InitBase
     {
         int currentMapIndex = 0;
 
-        for (int i = 0; i < Stages.Count; ++i)
+        for (int i = 0; i < Stages.Count; i++)
         {
-            Stages[i].SetInfo(i);
-
+            Stages[i].SetInfo(i);  
+            
             if (Stages[i].StartSpawnInfo.WorldPos != Vector3.zero)
             {
                 currentMapIndex = i;
@@ -24,7 +25,7 @@ public class StageTransition : InitBase
         }
 
         OnMapChanged(currentMapIndex);
-    }
+	}
 
     public void CheckMapChanged(Vector3 position)
     {
@@ -37,14 +38,14 @@ public class StageTransition : InitBase
 
     private int GetStageIndex(Vector3 position)
     {
-        for (int i = 0; i < Stages.Count; ++i)
+        for (int i = 0; i < Stages.Count; i++)
         {
-            if (Stages[i].IsPointInStage(position))
+            if(Stages[i].IsPointInStage(position))
             {
                 return i;
             }
         }
-        
+
         Debug.LogError("Cannot Find CurrentMapZone");
         return -1;
     }
@@ -53,7 +54,7 @@ public class StageTransition : InitBase
     {
         CurrentStageIndex = newMapIndex;
         CurrentStage = Stages[CurrentStageIndex];
-
+        
         LoadMapsAround(newMapIndex);
         UnloadOtherMaps(newMapIndex);
     }
@@ -61,9 +62,9 @@ public class StageTransition : InitBase
     private void LoadMapsAround(int mapIndex)
     {
         // 이전, 현재, 다음 맵을 로드
-        for (int i = mapIndex - 1; i <= mapIndex + 1; ++i)
+        for (int i = mapIndex - 1; i <= mapIndex + 1; i++)
         {
-            if (i > -1 && i < Stages.Count)
+            if (i > -1 && i < Stages.Count) 
             {
                 Debug.Log($"{i} Stage Load -> {Stages[i].name}");
                 Stages[i].LoadStage();
@@ -73,7 +74,7 @@ public class StageTransition : InitBase
 
     private void UnloadOtherMaps(int mapIndex)
     {
-        for (int i = 0; i < Stages.Count; ++i)
+        for (int i = 0; i < Stages.Count; i++)
         {
             if (i < mapIndex - 1 || i > mapIndex + 1)
             {

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class Managers : MonoBehaviour
 {
@@ -35,6 +36,41 @@ public class Managers : MonoBehaviour
     public static UIManager UI { get { return Instance?._ui; } }
     #endregion
 
+    #region Language
+
+    private static ELanguage _language = ELanguage.Korean;
+
+    public static ELanguage Language
+    {
+        get { return _language; }
+        set
+        {
+            _language = value;
+        }
+    }
+
+    public static string GetText(string textId)
+    {
+        switch (_language)
+        {
+            case ELanguage.Korean:
+                return Data.TextDict[textId].KOR;
+            case ELanguage.English:
+                break;
+            case ELanguage.French:
+                break;
+            case ELanguage.SimplifiedChinese:
+                break;
+            case ELanguage.TraditionalChinese:
+                break;
+            case ELanguage.Japanese:
+                break;
+        }
+
+        return "";
+    }
+    #endregion
+    
     public static void Init()
     {
         if (s_instance == null && Initialized == false)

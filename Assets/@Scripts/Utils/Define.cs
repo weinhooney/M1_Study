@@ -190,6 +190,16 @@ public static class Define
         PullEffect,
         Stun,
     }
+
+    public enum ELanguage
+    {
+        Korean,
+        English,
+        French,
+        SimplifiedChinese,
+        TraditionalChinese,
+        Japanese,
+    }
     
     public const float EFFECT_SMALL_RADIUS = 2.5f;
     public const float EFFECT_NORMAL_RADIUS = 4.5f;
@@ -246,6 +256,7 @@ public static class SortingLayers
     public const int SPELL_INDICATOR = 200;
     public const int CREATURE = 300;
     public const int ENV = 300;
+    public const int NPC = 310;
     public const int PROJECTILE = 310;
     public const int SKILL_EFFECT = 310;
     public const int DAMAGE_FONT = 410;
